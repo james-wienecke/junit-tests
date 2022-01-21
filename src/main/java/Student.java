@@ -38,4 +38,8 @@ public class Student {
     public void addGrade(int grade) {
         this.grades.add(grade);
     }
+
+    public double getGradeAverage() {
+        return this.grades.stream().reduce(0, Integer::sum) / (double) grades.size();
+    }
 }
