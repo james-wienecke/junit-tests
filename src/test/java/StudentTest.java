@@ -66,7 +66,7 @@ public class StudentTest {
     @Test
     public void studentSetId() {
         long setIdVal = 92L;
-        test.setId(setId);
+        test.setId(setIdVal);
         Assert.assertNotEquals(testId, test.getId());
         Assert.assertEquals(setIdVal, test.getId());
         test.setId(testId);

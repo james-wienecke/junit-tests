@@ -22,4 +22,16 @@ public class Student {
     public ArrayList<Integer> getGrades() {
         return grades;
     }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setGrades(ArrayList<Integer> grades) {
+        this.grades = grades;
+    }
 }
