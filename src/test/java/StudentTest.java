@@ -122,4 +122,16 @@ public class StudentTest {
         test.setGrades(new ArrayList<>());
         Assert.assertEquals(0, test.getGradeAverage(), 0);
     }
+
+    @Test
+    public void studentGradeUpdate() {
+        test.setGrades(testGradesInt);
+        Assert.assertEquals(testGradesInt.get(0), test.getGrades().get(0));
+        Assert.assertEquals(testGradesInt.get(1), test.getGrades().get(1));
+        test.updateGrade(0, 100);
+        test.updateGrade(1, 83);
+        Assert.assertEquals(testGradesInt.get(0), test.getGrades().get(0));
+        Assert.assertEquals(testGradesInt.get(1), test.getGrades().get(1));
+        test.setGrades(new ArrayList<>());
+    }
 }
