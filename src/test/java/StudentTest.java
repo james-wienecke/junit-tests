@@ -94,5 +94,19 @@ public class StudentTest {
         Assert.assertNotEquals(testGradesIntEmpty, test.getGrades());
         Assert.assertEquals(testGradesInt, test.getGrades());
         Assert.assertSame(testGradesInt, test.getGrades());
+        test.setGrades(new ArrayList<>());
+        Assert.assertEquals(testGradesIntEmpty, test.getGrades());
+    }
+
+    @Test
+    public void studentAddGrade() {
+        test.addGrade(testGradesInt.get(0));
+        Assert.assertNotNull(test.getGrades().get(0));
+        for (int i = 1; i < testGradesInt.size(); i++) {
+            test.addGrade(testGradesInt.get(i));
+        }
+        Assert.assertNotEquals(testGradesIntEmpty, test.getGrades());
+        Assert.assertEquals(testGradesInt, test.getGrades());
+        Assert.assertNotSame(testGradesInt, test.getGrades());
     }
 }
