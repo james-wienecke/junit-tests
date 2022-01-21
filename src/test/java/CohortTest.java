@@ -72,5 +72,6 @@ public class CohortTest {
         long targetId = testStudents.get(1).getId();
         assertSame(testStudents.get(1), cohort.getStudentById(targetId));
         assertNotSame(testStudents.get(2), cohort.getStudentById(targetId));
+        assertNull(cohort.getStudentById(9999L));
     }
 }
