@@ -47,4 +47,8 @@ public class Student {
     public void updateGrade(int index, int grade) {
         grades.set(index, grade);
     }
+
+    public void deleteGrade(int index) {
+        grades.remove(index);
+    }
 }
