@@ -40,6 +40,7 @@ public class Student {
     }
 
     public double getGradeAverage() {
-        return this.grades.stream().reduce(0, Integer::sum) / (double) grades.size();
+        if (grades.size() == 0) return 0d;
+        return this.grades.stream().mapToDouble(a -> a).reduce(0d, Double::sum) / grades.size();
     }
 }
