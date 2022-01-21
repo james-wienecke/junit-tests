@@ -51,17 +51,48 @@ public class StudentTest {
         Assert.assertEquals(testId, test.getId());
         Assert.assertNotEquals(654L, test.getId());
     }
-
     @Test
     public void studentGetName() {
         Assert.assertNotNull(test.getName());
         Assert.assertEquals(testName, test.getName());
         Assert.assertNotEquals("bad value", test.getName());
     }
-
     @Test
     public void studentGetGrades() {
         Assert.assertNotNull(test.getGrades());
         Assert.assertNotSame(testGradesInt, test.getGrades());
+    }
+
+    @Test
+    public void studentSetId() {
+        long setIdVal = 92L;
+        test.setId(setId);
+        Assert.assertNotEquals(testId, test.getId());
+        Assert.assertEquals(setIdVal, test.getId());
+        test.setId(testId);
+        Assert.assertNotEquals(setIdVal, test.getId());
+        Assert.assertEquals(testId, test.getId());
+
+    }
+    @Test
+    public void studentSetName() {
+        String setNameVal = "carl";
+        test.setName(setNameVal);
+        Assert.assertNotEquals(testName, test.getName());
+        Assert.assertEquals(setNameVal, test.getName());
+        test.setName(testName);
+        Assert.assertNotEquals(setNameVal, test.getName());
+        Assert.assertEquals(testName, test.getName());
+
+    }
+    @Test
+    public void studentSetGrades() {
+        Assert.assertEquals(testGradesIntEmpty, test.getGrades());
+        Assert.assertNotSame(testGradesIntEmpty, test.getGrades());
+        Assert.assertNotSame(testGradesInt, test.getGrades());
+        test.setGrades(testGradesInt);
+        Assert.assertNotEquals(testGradesIntEmpty, test.getGrades());
+        Assert.assertEquals(testGradesInt, test.getGrades());
+        Assert.assertSame(testGradesInt, test.getGrades());
     }
 }
