@@ -62,6 +62,15 @@ public class CohortTest {
             cohort.addStudent(student);
         }
         assertEquals(84d, cohort.getCohortAverage(), 0.1);
+    }
 
+    @Test
+    public void getStudentByIdTest() {
+        for (Student student : testStudents) {
+            cohort.addStudent(student);
+        }
+        long targetId = testStudents.get(1).getId();
+        assertSame(testStudents.get(1), cohort.getStudentById(targetId));
+        assertNotSame(testStudents.get(2), cohort.getStudentById(targetId));
     }
 }
