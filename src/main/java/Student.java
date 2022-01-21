@@ -34,4 +34,8 @@ public class Student {
     public void setGrades(ArrayList<Integer> grades) {
         this.grades = grades;
     }
+
+    public void addGrade(int grade) {
+        this.grades.add(grade);
+    }
 }
