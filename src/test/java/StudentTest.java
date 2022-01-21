@@ -109,4 +109,17 @@ public class StudentTest {
         Assert.assertEquals(testGradesInt, test.getGrades());
         Assert.assertNotSame(testGradesInt, test.getGrades());
     }
+
+    @Test
+    public void studentGradeAvg() {
+        test.addGrade(100);
+        Assert.assertNotEquals(0, test.getGradeAverage(), 0);
+        Assert.assertEquals(100, test.getGradeAverage(), 0);
+        test.addGrade(50);
+        Assert.assertEquals(75, test.getGradeAverage(), 0.01);
+        test.addGrade(75);
+        Assert.assertEquals(75, test.getGradeAverage(), 0.01);
+        test.setGrades(new ArrayList<>());
+        Assert.assertEquals(0, test.getGradeAverage(), 0);
+    }
 }
