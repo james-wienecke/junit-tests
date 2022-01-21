@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -7,6 +8,9 @@ public class StudentTest {
     public void studentConstructor() {
         long id = 1234L;
         String name = "test";
-        Student student = new Student()
+        Student student = new Student(id, name);
+        Student nonstudent;
+        Assert.assertNotNull(student);
+        Assert.assertNull(nonstudent);
     }
 }
