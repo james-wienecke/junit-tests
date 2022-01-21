@@ -1,15 +1,6 @@
 public class CodeupCrypt {
-    public static double version;
+    public static double version = 0;
 
-    /* HASHING */
-    /*
-    Chars	Replace
-    a or A	4
-    e or E	3
-    i or I	1
-    o or O	0
-    u or U	9
-     */
     public static String hashPassword(String str) {
         return str
                 .replace('a', '4')
