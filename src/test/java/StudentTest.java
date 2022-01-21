@@ -138,4 +138,15 @@ public class StudentTest {
         Assert.assertEquals(newGrade2, (int) test.getGrades().get(1));
         test.setGrades(new ArrayList<>());
     }
+
+    @Test
+    public void studentGradeDelete() {
+        for (int i = 0; i < testGradesInt.size(); i++)  {
+            test.addGrade(testGradesInt.get(i));
+        }
+        Assert.assertEquals(testGradesInt, test.getGrades());
+        test.deleteGrade(2);
+        test.deleteGrade(1);
+        Assert.assertNotEquals(testGradesInt, test.getGrades());
+    }
 }
