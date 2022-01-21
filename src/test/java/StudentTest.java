@@ -9,7 +9,7 @@ public class StudentTest {
         long id = 1234L;
         String name = "test";
         Student student = new Student(id, name);
-        Student nonstudent;
+        Student nonstudent = null;
         Assert.assertNotNull(student);
         Assert.assertNull(nonstudent);
     }
