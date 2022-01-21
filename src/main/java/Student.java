@@ -43,4 +43,8 @@ public class Student {
         if (grades.size() == 0) return 0d;
         return this.grades.stream().mapToDouble(a -> a).reduce(0d, Double::sum) / grades.size();
     }
+
+    public void updateGrade(int index, int grade) {
+        grades.set(index, grade);
+    }
 }

@@ -125,13 +125,17 @@ public class StudentTest {
 
     @Test
     public void studentGradeUpdate() {
-        test.setGrades(testGradesInt);
+        for (int i = 0; i < testGradesInt.size(); i++)  {
+            test.addGrade(testGradesInt.get(i));
+        }
         Assert.assertEquals(testGradesInt.get(0), test.getGrades().get(0));
         Assert.assertEquals(testGradesInt.get(1), test.getGrades().get(1));
-        test.updateGrade(0, 100);
-        test.updateGrade(1, 83);
-        Assert.assertEquals(testGradesInt.get(0), test.getGrades().get(0));
-        Assert.assertEquals(testGradesInt.get(1), test.getGrades().get(1));
+        int newGrade1 = 100;
+        int newGrade2 = 83;
+        test.updateGrade(0, newGrade1);
+        test.updateGrade(1, newGrade2);
+        Assert.assertEquals(newGrade1, (int) test.getGrades().get(0));
+        Assert.assertEquals(newGrade2, (int) test.getGrades().get(1));
         test.setGrades(new ArrayList<>());
     }
 }
