@@ -25,6 +25,6 @@ public class CodeupCrypt {
     }
 
     public static boolean checkPassword(String plain, String crypt) {
-        return false;
+        return crypt.equals(hashPassword(plain));
     }
 }
