@@ -18,7 +18,9 @@ public class CohortTest {
     //// A Cohort instance can add a Student to the List of students.
     @Test
     public void addStudentTest() {
-        Assert.assertNull(cohort.getStudents());
+        Assert.assertEquals(0, cohort.getStudents().size());
+        cohort.addStudent(new Student(1234L, "laura"));
+        Assert.assertEquals(1, cohort.getStudents().size());
 
     }
     //// A Cohort instance can get the current List of students.
